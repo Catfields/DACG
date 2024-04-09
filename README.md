@@ -20,4 +20,4 @@ For `IU X-Ray`, you can download the dataset from [here](https://drive.google.co
 
 ## Run on IU X-Ray
 
-Run `bash run_iu_xray.sh` to train a model on the IU X-Ray data.
+Run `run_iu_xray.sh` to train a model on the IU X-Ray data.
