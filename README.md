@@ -7,9 +7,9 @@ This repository contains code necessary to run DACG model.
 
 ## Requirements
 
-- `torch==1.5.1`
-- `torchvision==0.6.1`
-- `opencv-python==4.4.0.42`
+- `torch==2.0.1+cu117`
+- `torchvision==0.15.2+cu117`
+- `opencv-python==4.7.0.72`
 
 ## Datasets
 We use two datasets (IU X-Ray) in our paper.
