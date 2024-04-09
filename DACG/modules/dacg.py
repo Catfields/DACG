@@ -401,7 +401,7 @@ class EncoderDecoder(AttModel):
         self.model = self.make_model(tgt_vocab)
         self.logit = nn.Linear(args.d_model, tgt_vocab)
 
-        # 创新
+     
         self.da = DANetHead(args.d_model, args.d_model)
 
     def init_hidden(self, bsz):
@@ -421,7 +421,7 @@ class EncoderDecoder(AttModel):
         if att_masks is None:
             att_masks = att_feats.new_ones(att_feats.shape[:2], dtype=torch.long)
 
-        # 创新
+    
         att_feats = self.da(att_feats)
 
         att_masks = att_masks.unsqueeze(-2)
