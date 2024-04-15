@@ -12,7 +12,7 @@ This repository contains code necessary to run DACG model.
 - `opencv-python==4.7.0.72`
 
 ## Datasets
-We use two datasets (IU X-Ray) in our paper.
+We use one datasets (IU X-Ray) in our paper.
 
 For `IU X-Ray`, you can download the dataset from [here](https://drive.google.com/file/d/1c0BXEuDy8Cmm2jfN0YYGkQxFZd2ZIoLg/view?usp=sharing) and then put the files in `data/iu_xray`.
 
