@@ -1,0 +1,4 @@
+export ANTHROPIC_BASE_URL="https://api.v3.cm"
+export ANTHROPIC_AUTH_TOKEN="sk-8SZO8vgIr7lP1xGPDd4bE6E76bD6427f9f35Cb2d4a4fCb87"
+export ANTHROPIC_MODEL="claude-3-7-sonnet-20250219"
+export ANTHROPIC_SMALL_FAST_MODEL="claude-3-7-haiku-20241022"

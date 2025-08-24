@@ -1,0 +1,16 @@
+data/
+results/
+.claude/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytest_cache/
+.ipynb_checkpoints

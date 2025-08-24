@@ -1,0 +1,165 @@
+08/24/2025 15:57:42 - INFO - model_evaluator - Evaluation Arguments:
+08/24/2025 15:57:42 - INFO - model_evaluator -   image_dir: data/mimic_cxr/images/
+08/24/2025 15:57:42 - INFO - model_evaluator -   ann_path: data/mimic_cxr/annotation_100k.json
+08/24/2025 15:57:42 - INFO - model_evaluator -   dataset_name: mimic_cxr
+08/24/2025 15:57:42 - INFO - model_evaluator -   max_seq_length: 60
+08/24/2025 15:57:42 - INFO - model_evaluator -   threshold: 3
+08/24/2025 15:57:42 - INFO - model_evaluator -   num_workers: 4
+08/24/2025 15:57:42 - INFO - model_evaluator -   batch_size: 2
+08/24/2025 15:57:42 - INFO - model_evaluator -   seed: 456789
+08/24/2025 15:57:42 - INFO - model_evaluator -   model_path: results/mimic_cxr_100k
+08/24/2025 15:57:42 - INFO - model_evaluator -   detailed_output: True
+08/24/2025 15:57:42 - INFO - model_evaluator -   output_dir: eval_results_mimic_cxr_100k
+08/24/2025 15:57:42 - INFO - model_evaluator -   d_model: 512
+08/24/2025 15:57:42 - INFO - model_evaluator -   d_ff: 512
+08/24/2025 15:57:42 - INFO - model_evaluator -   num_heads: 8
+08/24/2025 15:57:42 - INFO - model_evaluator -   num_layers: 3
+08/24/2025 15:57:42 - INFO - model_evaluator -   dropout: 0.1
+08/24/2025 15:57:42 - INFO - model_evaluator -   optim: Adam
+08/24/2025 15:57:42 - INFO - model_evaluator -   lr_ve: 5e-05
+08/24/2025 15:57:42 - INFO - model_evaluator -   lr_ed: 0.0001
+08/24/2025 15:57:42 - INFO - model_evaluator -   weight_decay: 5e-05
+08/24/2025 15:57:42 - INFO - model_evaluator -   amsgrad: True
+08/24/2025 15:57:42 - INFO - model_evaluator -   lr_scheduler: StepLR
+08/24/2025 15:57:42 - INFO - model_evaluator -   step_size: 50
+08/24/2025 15:57:42 - INFO - model_evaluator -   gamma: 0.1
+08/24/2025 15:57:42 - INFO - model_evaluator -   epochs: 100
+08/24/2025 15:57:42 - INFO - model_evaluator -   save_dir: results
+08/24/2025 15:57:42 - INFO - model_evaluator -   record_dir: records
+08/24/2025 15:57:42 - INFO - model_evaluator -   monitor_mode: max
+08/24/2025 15:57:42 - INFO - model_evaluator -   monitor_metric: BLEU_4
+08/24/2025 15:57:42 - INFO - model_evaluator -   early_stop: 50
+08/24/2025 15:57:42 - INFO - model_evaluator -   save_period: 1
+08/24/2025 15:57:42 - INFO - model_evaluator -   log_period: 1000
+08/24/2025 15:57:42 - INFO - model_evaluator -   use_amp: True
+08/24/2025 15:57:42 - INFO - model_evaluator -   resume: None
+08/24/2025 15:57:42 - INFO - model_evaluator -   gradient_accumulation_steps: 1
+08/24/2025 16:01:55 - INFO - model_evaluator - Evaluation Arguments:
+08/24/2025 16:01:55 - INFO - model_evaluator -   image_dir: data/mimic_cxr/images/
+08/24/2025 16:01:55 - INFO - model_evaluator -   ann_path: data/mimic_cxr/annotation_100k.json
+08/24/2025 16:01:55 - INFO - model_evaluator -   dataset_name: mimic_cxr
+08/24/2025 16:01:55 - INFO - model_evaluator -   max_seq_length: 60
+08/24/2025 16:01:55 - INFO - model_evaluator -   threshold: 3
+08/24/2025 16:01:55 - INFO - model_evaluator -   num_workers: 4
+08/24/2025 16:01:55 - INFO - model_evaluator -   batch_size: 2
+08/24/2025 16:01:55 - INFO - model_evaluator -   visual_extractor: resnet101
+08/24/2025 16:01:55 - INFO - model_evaluator -   visual_extractor_pretrained: True
+08/24/2025 16:01:55 - INFO - model_evaluator -   d_model: 512
+08/24/2025 16:01:55 - INFO - model_evaluator -   d_ff: 512
+08/24/2025 16:01:55 - INFO - model_evaluator -   d_vf: 2048
+08/24/2025 16:01:55 - INFO - model_evaluator -   num_heads: 8
+08/24/2025 16:01:55 - INFO - model_evaluator -   num_layers: 3
+08/24/2025 16:01:55 - INFO - model_evaluator -   dropout: 0.1
+08/24/2025 16:01:55 - INFO - model_evaluator -   logit_layers: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   bos_idx: 0
+08/24/2025 16:01:55 - INFO - model_evaluator -   eos_idx: 0
+08/24/2025 16:01:55 - INFO - model_evaluator -   pad_idx: 0
+08/24/2025 16:01:55 - INFO - model_evaluator -   use_bn: 0
+08/24/2025 16:01:55 - INFO - model_evaluator -   drop_prob_lm: 0.5
+08/24/2025 16:01:55 - INFO - model_evaluator -   rm_num_slots: 3
+08/24/2025 16:01:55 - INFO - model_evaluator -   rm_num_heads: 8
+08/24/2025 16:01:55 - INFO - model_evaluator -   rm_d_model: 512
+08/24/2025 16:01:55 - INFO - model_evaluator -   sample_method: beam_search
+08/24/2025 16:01:55 - INFO - model_evaluator -   beam_size: 3
+08/24/2025 16:01:55 - INFO - model_evaluator -   temperature: 1.0
+08/24/2025 16:01:55 - INFO - model_evaluator -   sample_n: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   group_size: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   output_logsoftmax: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   decoding_constraint: 0
+08/24/2025 16:01:55 - INFO - model_evaluator -   block_trigrams: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   seed: 456789
+08/24/2025 16:01:55 - INFO - model_evaluator -   model_path: results/mimic_cxr_100k
+08/24/2025 16:01:55 - INFO - model_evaluator -   detailed_output: True
+08/24/2025 16:01:55 - INFO - model_evaluator -   output_dir: eval_results_mimic_cxr_100k
+08/24/2025 16:01:55 - INFO - model_evaluator -   optim: AdamW
+08/24/2025 16:01:55 - INFO - model_evaluator -   lr_ve: 5e-05
+08/24/2025 16:01:55 - INFO - model_evaluator -   lr_ed: 1e-05
+08/24/2025 16:01:55 - INFO - model_evaluator -   weight_decay: 5e-05
+08/24/2025 16:01:55 - INFO - model_evaluator -   amsgrad: True
+08/24/2025 16:01:55 - INFO - model_evaluator -   lr_scheduler: StepLR
+08/24/2025 16:01:55 - INFO - model_evaluator -   step_size: 50
+08/24/2025 16:01:55 - INFO - model_evaluator -   gamma: 0.1
+08/24/2025 16:01:55 - INFO - model_evaluator -   epochs: 100
+08/24/2025 16:01:55 - INFO - model_evaluator -   save_dir: results
+08/24/2025 16:01:55 - INFO - model_evaluator -   record_dir: records/
+08/24/2025 16:01:55 - INFO - model_evaluator -   monitor_mode: max
+08/24/2025 16:01:55 - INFO - model_evaluator -   monitor_metric: BLEU_4
+08/24/2025 16:01:55 - INFO - model_evaluator -   early_stop: 50
+08/24/2025 16:01:55 - INFO - model_evaluator -   save_period: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   log_period: 1000
+08/24/2025 16:01:55 - INFO - model_evaluator -   use_amp: True
+08/24/2025 16:01:55 - INFO - model_evaluator -   resume: None
+08/24/2025 16:01:55 - INFO - model_evaluator -   gradient_accumulation_steps: 1
+08/24/2025 16:01:55 - INFO - model_evaluator -   n_gpu: 1
+08/24/2025 16:02:03 - INFO - model_evaluator - Loading model from results/mimic_cxr_100k
+08/24/2025 16:02:03 - INFO - model_evaluator - Loading best model from results/mimic_cxr_100k/model_best
+08/24/2025 16:02:03 - INFO - accelerate.accelerator - Loading states from results/mimic_cxr_100k/model_best
+08/24/2025 16:02:03 - INFO - accelerate.checkpointing - All model weights loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.checkpointing - All optimizer states loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.checkpointing - All scheduler states loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.checkpointing - All dataloader sampler states loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.checkpointing - GradScaler state loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.checkpointing - All random states loaded successfully
+08/24/2025 16:02:06 - INFO - accelerate.accelerator - Loading in 0 custom states
+08/24/2025 16:02:06 - INFO - model_evaluator - Evaluating on validation set...
+08/24/2025 16:05:36 - INFO - model_evaluator - Validation set predictions and ground truths: 2130, 2130
+08/24/2025 16:05:36 - INFO - model_evaluator - Validation samples (first 10):
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[0]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[0]: 'no evidence of consolidation to suggest pneumonia is seen . there is some retrocardiac atelectasis . a small left pleural effusion may be present . no pneumothorax is seen . no pulmonary edema . a right granuloma is unchanged . the heart is mildly enlarged unchanged . there is tortuosity of the aorta .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[1]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[1]: 'no evidence of consolidation to suggest pneumonia is seen . there is some retrocardiac atelectasis . a small left pleural effusion may be present . no pneumothorax is seen . no pulmonary edema . a right granuloma is unchanged . the heart is mildly enlarged unchanged . there is tortuosity of the aorta .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[2]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[2]: 'there are moderate bilateral pleural effusions with overlying atelectasis underlying consolidation not excluded . mild prominence of the interstitial markings suggests mild pulmonary edema . the cardiac silhouette is mildly enlarged . the mediastinal contours are unremarkable . there is no evidence of pneumothorax .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[3]: ' . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[3]: 'there are moderate bilateral pleural effusions with overlying atelectasis underlying consolidation not excluded . mild prominence of the interstitial markings suggests mild pulmonary edema . the cardiac silhouette is mildly enlarged . the mediastinal contours are unremarkable . there is no evidence of pneumothorax .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[4]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[4]: 'moderate to large bilateral pleural effusions are again seen likely right greater than left . there is suspected superimposed pulmonary edema may have slightly improved since prior although detailed evaluation is limited given layering pleural effusions . vasculature appears less engorged . cardiac silhouette cannot be assessed .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[5]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[5]: 'heart size is difficult to assess given the presence of moderate to large bilateral pleural effusions but appears at least moderately enlarged . the mediastinal contours are grossly unremarkable . perihilar haziness with vascular indistinctness and diffuse alveolar opacities are compatible with moderate pulmonary edema . bibasilar compressive atelectasis is demonstrated . no pneumothorax is seen . moderate multilevel'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[6]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[6]: 'the bilateral pleural effusions lower lobe volume loss and dense lower lobe opacity compatible with a combination of volume lossinfiltrateeffusion . the heart continues to be moderately enlarged . there is mild vascular redistribution .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[7]: ' . . . . . . . . . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[7]: 'frontal and lateral views of the chest . size of the bilateral effusions left greater than right has slightly decreased in size since prior exam . there is less pulmonary vascular congestion on the current exam as well . cardiac silhouette which appears enlarged is unchanged . no acute osseous abnormality is detected .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[8]: ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[8]: 'frontal and lateral views of the chest . size of the bilateral effusions left greater than right has slightly decreased in size since prior exam . there is less pulmonary vascular congestion on the current exam as well . cardiac silhouette which appears enlarged is unchanged . no acute osseous abnormality is detected .'
+08/24/2025 16:05:36 - INFO - model_evaluator - Pred[9]: ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #'
+08/24/2025 16:05:36 - INFO - model_evaluator - GT[9]: 'there is a moderate-sized left pleural effusion which is increased in size from the prior exam in . there is no right pleural effusion . the lungs are clear without pulmonary edema consolidation or pneumothorax . a small calcified granuloma in the right mid-to-lower lung zone is unchanged from prior exams . the cardiac size is mildly enlarged unchanged'
+08/24/2025 16:05:36 - INFO - model_evaluator - Empty predictions: 0/2130
+08/24/2025 16:05:38 - INFO - model_evaluator - Validation Results:
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_BLEU_1: 0.0684729848014636
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_BLEU_2: 0.002354267629783314
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_BLEU_3: 3.5739823313306424e-09
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_BLEU_4: 4.423055544550833e-12
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_ROUGE_L: 0.07776765356866575
+08/24/2025 16:05:38 - INFO - model_evaluator -   val_CIDER: 3.5076832916035595e-05
+08/24/2025 16:05:38 - INFO - model_evaluator - Evaluating on test set...
+08/24/2025 16:11:59 - INFO - model_evaluator - Test set predictions and ground truths: 3858, 3858
+08/24/2025 16:11:59 - INFO - model_evaluator - Test samples (first 10):
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[0]: ' . . . . . . . . . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[0]: 'lateral view somewhat limited due to overlying motion artifact . the lungs are low in volume . there is no focal airspace consolidation to suggest pneumonia . a <unk> calcified granuloma just below the medial aspect of the right hemidiaphragm is unchanged from prior study . no pleural effusions or pulmonary edema . there is no pneumothorax . the'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[1]: ' . . . . . . . . . ett dobhoff ett dobhoff serial dobhoff serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[1]: 'lateral view somewhat limited due to overlying motion artifact . the lungs are low in volume . there is no focal airspace consolidation to suggest pneumonia . a <unk> calcified granuloma just below the medial aspect of the right hemidiaphragm is unchanged from prior study . no pleural effusions or pulmonary edema . there is no pneumothorax . the'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[2]: ' . . . . . . . . . ett dobhoff ett dobhoff serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[2]: 'frontal and lateral radiographs of the chest redemonstrate a round calcified pulmonary nodule in the posterior right lung base unchanged from multiple priors and consistent with prior granulomatous disease . a known enlarged right hilar lymph node seen on ct of likely accounts for the increased opacity at the right hilum . a known right mediastinal lymph node conglomerate'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[3]: ' . . . . . . . . ett . ett dobhoff ett dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[3]: 'frontal and lateral radiographs of the chest redemonstrate a round calcified pulmonary nodule in the posterior right lung base unchanged from multiple priors and consistent with prior granulomatous disease . a known enlarged right hilar lymph node seen on ct of likely accounts for the increased opacity at the right hilum . a known right mediastinal lymph node conglomerate'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[4]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[4]: 'frontal and lateral radiographs of the chest redemonstrate a round calcified pulmonary nodule in the posterior right lung base unchanged from multiple priors and consistent with prior granulomatous disease . a known enlarged right hilar lymph node seen on ct of likely accounts for the increased opacity at the right hilum . a known right mediastinal lymph node conglomerate'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[5]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[5]: 'frontal and lateral views of the chest were obtained . rounded calcified nodule in the region of the posterior right lung base is seen and represents calcified granuloma on cts dating back to likely secondary to prior granulomatous disease . previously seen <unk> lymph node conglomerate and right hilar lymph nodes are better <unk> on ct . no focal'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[6]: ' . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[6]: 'frontal and lateral views of the chest were obtained . rounded calcified nodule in the region of the posterior right lung base is seen and represents calcified granuloma on cts dating back to likely secondary to prior granulomatous disease . previously seen <unk> lymph node conglomerate and right hilar lymph nodes are better <unk> on ct . no focal'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[7]: ' . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[7]: 'in comparison with the study of there is no evidence of pneumothorax . continued low lung volumes with substantial mass in the right paratracheal region .'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[8]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[8]: 'the et tube is 35 cm above the carina . the ng tube tip is off the film at least in the stomach . right ij cordis tip is in the proximal svc . the heart size is moderately enlarged . there is ill-defined vasculature and alveolar infiltrate right greater than left . this is markedly increased compared to'
+08/24/2025 16:11:59 - INFO - model_evaluator - Pred[9]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 16:11:59 - INFO - model_evaluator - GT[9]: 'left picc tip is seen terminating in the region of the distal left brachiocephalic vein . tracheostomy tube is in unchanged standard position . the heart is moderately enlarged . marked calcification of the aortic knob is again present . mild pulmonary vascular congestion is similar . bibasilar streaky airspace opacities are minimally improved . previously noted left pleural'
+08/24/2025 16:11:59 - INFO - model_evaluator - Empty predictions: 0/3858
+08/24/2025 16:12:03 - INFO - model_evaluator - Test Results:
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_BLEU_1: 0.06794598061698752
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_BLEU_2: 0.0018276082910488115
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_BLEU_3: 2.476526921413176e-09
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_BLEU_4: 2.89564106802734e-12
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_ROUGE_L: 0.0718036105097998
+08/24/2025 16:12:03 - INFO - model_evaluator -   test_CIDER: 7.245144744912379e-05

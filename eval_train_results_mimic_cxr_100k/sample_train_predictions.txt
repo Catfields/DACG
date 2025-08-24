@@ -1,0 +1,201 @@
+=== Training Set Samples ===
+Sample 0:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: ap and lateral chest radiographs demonstrate bibasilar consolidation most likely representing atelectasis but underlying infectious process cannot be excluded . cardiomediastinal silhouette is not well seen due to this finding . there is no pneumothorax . mild pulmonary vascular congestion is seen and pleural effusions cannot be excluded .
+
+Sample 1:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: the lungs are clear . the heart and mediastinal structures are unremarkable . the bony thorax is grossly intact .
+
+Sample 2:
+Prediction:  . . . . . . . . ett . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: no consolidation pleural effusion or pneumothorax . linear opacities the left lung most likely represent atelectasis . moderate enlargement of the cardiac silhouette is stable . there are aortic arch calcifications .
+
+Sample 3:
+Prediction:  . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: there is persistent moderate cardiomegaly . enlargement of the main pulmonary artery is again seen suggesting pulmonary hypertension . the lungs are clear without consolidation effusion or edema . no acute osseous abnormalities .
+
+Sample 4:
+Prediction:  . . . . . . . . ett . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the lung volumes are low . again there is vascular engorgement interstitial thickening and hazy perihilar opacities consistent with mild pulmonary edema . this is not significantly changed from the prior exam . there is no focal consolidation . there is no pleural effusion or pneumothorax . the mediastinal contours are normal . the heart size is moderately enlarged
+
+Sample 5:
+Prediction:  . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the cardiac mediastinal and hilar contours appear stable . there is no pleural effusion or pneumothorax . streaky scarring in the lingula is unchanged . the lungs appear otherwise clear .
+
+Sample 6:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: increased density at the right base has progressed compared to the prior study of and is compatible right middle lobe pneumonia . there is stable severe cardiomegaly . there is no pleural effusion pneumothorax or pulmonary edema .
+
+Sample 7:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: increased density at the right base has progressed compared to the prior study of and is compatible right middle lobe pneumonia . there is stable severe cardiomegaly . there is no pleural effusion pneumothorax or pulmonary edema .
+
+Sample 8:
+Prediction:  . . . . . . . . . ett . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously
+Ground Truth: streaky atelectasis is noted at the left lung base . lungs are otherwise clear of consolidation pleural effusion or pneumothorax . pulmonary vascular congestion is mild . mild cardiomegaly persists . aortic arch calcifications are incidental finding .
+
+Sample 9:
+Prediction:  . . . . . . . . . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously
+Ground Truth: when compared to prior there is no significant interval change . indistinct pulmonary vascular markings are again noted with central venous engorgement . moderate cardiomegaly is stable in configuration . there is no pleural effusion . hypertrophic changes noted in the spine . atherosclerotic calcifications seen at the aortic arch .
+
+Sample 10:
+Prediction:  . . . . . . . . . ett dobhoff postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the cardiac mediastinal and hilar contours appear stable . there is no pleural effusion or pneumothorax . streaky scarring in the lingula is unchanged . the lungs appear otherwise clear .
+
+Sample 11:
+Prediction:  . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: frontal and lateral views of the chest demonstrate low lung volumes . moderate cardiomegaly is unchanged . hilar and mediastinal silhouettes are unremarkable . aortic arch calcifications are again seen . mild pulmonary vascular congestion is noted . bibasilar opacities likely represent atelectasis .
+
+Sample 12:
+Prediction:  . . . . . . . . ett . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: increased density at the right base has progressed compared to the prior study of and is compatible right middle lobe pneumonia . there is stable severe cardiomegaly . there is no pleural effusion pneumothorax or pulmonary edema .
+
+Sample 13:
+Prediction:  . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: moderate enlargement of the cardiac silhouette is re- demonstrated . the aortic knob is calcified . mild pulmonary edema is new in the interval . mediastinal and hilar contours are unchanged . there is no pleural effusion focal consolidation or pneumothorax . patchy opacities in the lung bases likely reflect areas of atelectasis .
+
+Sample 14:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: pa and lateral views of the chest . better lung volumes compared to most recent study . moderate cardiomegaly is stable . unchanged mild pulmonary vascular congestion no pulmonary edema . the mediastinal and hilar contours and pleural surfaces are normal . mild linear atelectasis in the left mid lung .
+
+Sample 15:
+Prediction:  . . . . . . . . . ett . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: moderate enlargement of the cardiac silhouette is re- demonstrated . the aortic knob is calcified . mild pulmonary edema is new in the interval . mediastinal and hilar contours are unchanged . there is no pleural effusion focal consolidation or pneumothorax . patchy opacities in the lung bases likely reflect areas of atelectasis .
+
+Sample 16:
+Prediction:  . . . . . . . . ett . ett dobhoff ett dobhoff serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: moderate enlargement of the cardiac silhouette is re- demonstrated . the aortic knob is calcified . mild pulmonary edema is new in the interval . mediastinal and hilar contours are unchanged . there is no pleural effusion focal consolidation or pneumothorax . patchy opacities in the lung bases likely reflect areas of atelectasis .
+
+Sample 17:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: pa and lateral views of the chest provided . lungs are hyperinflated and clear . there is no focal consolidation effusion or pneumothorax . the cardiomediastinal silhouette is normal . imaged osseous structures are intact . no free air below the right hemidiaphragm is seen .
+
+Sample 18:
+Prediction:  . . . . . . . . ett . ett dobhoff ett dobhoff serial dobhoff serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: pa and lateral views of the chest provided . there is no focal consolidation effusion or pneumothorax . the cardiomediastinal silhouette is normal . imaged osseous structures are intact . no free air below the right hemidiaphragm is seen .
+
+Sample 19:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: no previous images . there is no evidence of pneumothorax . cardiac silhouette is somewhat enlarged without vascular congestion pleural effusion or acute focal pneumonia .
+
+Sample 20:
+Prediction:  . . . . . . . . . ett . ett . ett serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: frontal and lateral view of the chest . the cardiomediastinal silhouette is normal . there is no pleural effusion or pneumothorax . no focal consolidation . views of the upper abdomen are normal .
+
+Sample 21:
+Prediction:  . . . . . . . . . ett dobhoff serial dobhoff serial dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: the lungs are clear without consolidation or edema . there is no pleural effusion or pneumothorax . the cardiomediastinal silhouette is normal .
+
+Sample 22:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the cardiac mediastinal and hilar contours appear stable . there is no pleural effusion or pneumothorax . the lungs appear clear . no fracture is identified .
+
+Sample 23:
+Prediction:  . . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: patient is status post median sternotomy and cabg . cardiac silhouette size is mild to moderately enlarged . the aorta is mildly tortuous . lung volumes are slightly low which results in crowding of bronchovascular structures but no overt pulmonary edema . no focal consolidation pleural effusion or pneumothorax is seen . there are moderate degenerative changes seen in
+
+Sample 24:
+Prediction:  . . . . . . . . . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: no previous images . the heart is normal in size and there is no vascular congestion or pleural effusion . on the frontal view there is suggestion of some hazy opacification with preservation of lung markings on the left . however this is not appreciated on the lateral view and most likely represents merely overlying soft tissues . no
+
+Sample 25:
+Prediction:  . . . . . . . . . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: the lungs are clear . the cardiomediastinal silhouette is normal . no acute osseous abnormalities identified .
+
+Sample 26:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: low inspiratory volumes . allowing for this the heart is not enlarged . mild prominence of the mediastinum could reflect low inspiratory volumes . there is some patchy opacity at both lung bases . while this could reflect atelectasis the appearance is more suggestive of pneumonic infiltrates or areas of aspiration . no chf effusion or pneumothorax is detected
+
+Sample 27:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: the lungs are clear without focal consolidation . no pleural effusion or pneumothorax is seen . the cardiac and mediastinal silhouettes are stable . partially imaged is hardware in the lower cervical spine .
+
+Sample 28:
+Prediction:  . . . . . . . . . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: frontal and lateral views of the chest were obtained . haziness projecting over the left hemidiaphragm on the frontal view with apparent flattening of the diaphragm is felt to more likely be due to overlying soft tissue and possible artifact as no evidence of consolidation or pleural effusion is seen on the lateral view . the cardiac and mediastinal
+
+Sample 29:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: as compared to the previous radiograph no relevant change is seen . moderate cardiomegaly without pulmonary edema . no pleural effusions . no pneumonia no pulmonary edema . the cervical vertebral fixation devices are in unchanged position .
+
+Sample 30:
+Prediction:  . . . . . . . . ett . ett dobhoff ett ett serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: single portable ap upright chest radiograph was obtained . the cardiac silhouette appears normal and unchanged compared to the prior examination . mild mediastinal prominence is likely related to differences in patient positioning and technique . the lungs demonstrate low volumes as before but are otherwise clear without focal consolidation . there is no pleural effusion and no pneumothorax
+
+Sample 31:
+Prediction:  . . . . . . . . . ett . ett dobhoff serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial serial
+Ground Truth: there are no focal consolidations . the heart size is normal . the mediastinal contours are normal . there is no pleural effusion or pneumothorax . visualized osseous structures are unremarkable although chest radiography is not highly sensitive in evaluating back pain .
+
+Sample 32:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: frontal and lateral views of the chest were obtained . the heart size is mildly enlarged . increased opacity at the medial right lung apex is increased since . though this may represent a mediastinal vessel a mass is not excluded . pulmonary vascular markings are unremarkable . no focal consolidation substantial pleural effusion or pneumothorax . no radiopaque
+
+Sample 33:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: there are low lung volumes which accentuate the bronchovascular markings . no pleural effusion or pneumothorax is seen . the cardiac and mediastinal silhouettes are unremarkable . no definite displaced rib fracture is identified however this study is low in the sensitivity of detection of such .
+
+Sample 34:
+Prediction:  . . . . . . . . . ett . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously
+Ground Truth: pa and lateral views of the chest are provided . lungs are clear . cardiomediastinal silhouette is normal . bony structures are intact .
+
+Sample 35:
+Prediction:  . . . . . . . . . . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously
+Ground Truth: cardiac silhouette size is mildly enlarged similar to the previous exam . the aorta is mildly tortuous . mediastinal and hilar contours are within normal limits . pulmonary vasculature is not engorged . lungs are hyperinflated . patchy right basilar opacity is improved compared to the previous study but may reflect recurrent pneumonia . no pleural effusion or pneumothorax
+
+Sample 36:
+Prediction:  . . . . . . . . ett . ett dobhoff ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: heart size is mildly enlarged . the aorta is tortuous . pulmonary vasculature is not engorged . hilar contours are unchanged . lungs are hyperinflated . new focal opacity is seen within the left lower lobe as well as patchy nodular opacity within the left lower lobe findings concerning for multifocal pneumonia . no pleural effusion or pneumothorax is
+
+Sample 37:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: the cardiomediastinal and hilar contours are stable with mild tortuosity of the descending aorta . there is no pleural effusion or pneumothorax . hyperinflation and flattened hemidiaphragms may be indicative of a chronic pulmonary process . a 5 mm density is seen in the left lower lung stable since the prior study and probably a calcified granuloma is likely
+
+Sample 38:
+Prediction:  . . . . . . . . . ett dobhoff ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: cardiac silhouette size is mildly enlarged similar to the previous exam . the aorta is mildly tortuous . mediastinal and hilar contours are within normal limits . pulmonary vasculature is not engorged . lungs are hyperinflated . patchy right basilar opacity is improved compared to the previous study but may reflect recurrent pneumonia . no pleural effusion or pneumothorax
+
+Sample 39:
+Prediction:  . . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: the lung volumes are low . borderline size of the cardiac silhouette . moderate tortuosity of the thoracic aorta . normal hilar and mediastinal contours . the lung parenchyma appears unremarkable . there is no evidence of nodules or masses . no pulmonary edema . no pleural effusions .
+
+Sample 40:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: heart size is normal . the mediastinal and hilar contours are normal . the pulmonary vasculature is normal . lungs are clear . no pleural effusion or pneumothorax is seen . there are no acute osseous abnormalities .
+
+Sample 41:
+Prediction:  . . . . . . . . ett . ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett ett
+Ground Truth: a pacemaker generator overlies the left anterior chest wall . the leads appear intact and project over the expected location of the right atrium and right ventricle . the lung volumes are low . bibasilar opacities likely represent dependent atelectasis . no large pleural effusion is identified . there is mild pulmonary vascular congestion though no overt edema .
+
+Sample 42:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: ap upright and lateral chest radiographs were obtained . the lungs are low in volume but clear aside from minimal <unk> atelectasis or scarring . interstitial prominence is likely due to chronic changes related to the congestive heart failure . no overt pulmonary edema or vascular congestion seen currently . the heart remains moderately enlarged with tortuous aortic contour
+
+Sample 43:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: new pulmonary vascular congestion is accompanied by diffuse interstitial edema . additional patchy opacities in the right lung base may reflect patchy atelectasis aspiration or early pneumonia . moderate right and small left pleural effusions are present . asymmetrical opacity at right first costochondral junction appears to be due to degenerative changes at this level based on review of
+
+Sample 44:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: chest portable upright . new right internal jugular central venous line has been placed and terminates near the cavoatrial junction . there is no pneumothorax . the appearance of the heart and lungs otherwise unchanged from the prior study with mild pulmonary vascular congestion and bibasilar atelectasis due to low lung volumes .
+
+Sample 45:
+Prediction:  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+Ground Truth: heart size is normal . the aorta is mildly unfolded . mediastinal and hilar contours are otherwise within normal limits . pulmonary vasculature is normal . subsegmental atelectasis is noted in the left lower lobe . the lungs are otherwise clear without focal consolidation . no pleural effusion or pneumothorax is present . no acute osseous abnormalities seen .
+
+Sample 46:
+Prediction:  . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the lungs are clearthe cardiac hilar and mediastinal contours are normalno pleural abnormality is seen .
+
+Sample 47:
+Prediction:  . . . . . . . . . ett . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: heart size remains mildly enlarged . the mediastinal and hilar contours are within normal limits . there is mild pulmonary vascular congestion . minimal atelectasis is noted in the lung bases without focal consolidation pleural effusion or pneumothorax . no acute osseous abnormality is visualized . surgical clips are again noted in the right upper quadrant .
+
+Sample 48:
+Prediction:  . . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: mild to moderate enlargement of the cardiac silhouette is re- demonstrated . the mediastinal and hilar contours are unchanged . low lung volumes are present with mild crowding of bronchovascular structures but no overt pulmonary edema . patchy atelectasis is noted in the lung bases without focal consolidation . no pleural effusion or pneumothorax is present . there are
+
+Sample 49:
+Prediction:  . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical
+Ground Truth: the lungs are hyperexpanded which is unchanged from prior exams . stable apical scarring is present . there is stable left basilar atelectasis . there is no consolidation pleural effusion or pneumothorax . the cardiomediastinal silhouette is normal . abnormal densities in the left humerus most likely an enchondroma or prior medullary infarcts .
+

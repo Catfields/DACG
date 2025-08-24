@@ -1,0 +1,15 @@
+# Accelerate双GPU配置文件
+# 适用于双RTX 4090 GPU
+# 使用方法: accelerate launch --config_file accelerate_config_dual_gpu.yaml train_with_accelerate.py [参数]
+
+compute_environment: LOCAL_MACHINE
+distributed_type: MULTI_GPU
+fsdp_config: {}
+machine_rank: 0
+main_process_ip: null
+main_process_port: null
+main_training_function: main
+mixed_precision: fp16
+num_machines: 1
+num_processes: 2
+use_cpu: false

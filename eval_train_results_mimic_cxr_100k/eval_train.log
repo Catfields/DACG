@@ -1,0 +1,124 @@
+08/24/2025 17:32:21 - INFO - train_evaluator - Train Evaluation Arguments:
+08/24/2025 17:32:21 - INFO - train_evaluator -   image_dir: data/mimic_cxr/images/
+08/24/2025 17:32:21 - INFO - train_evaluator -   ann_path: data/mimic_cxr/annotation_100k.json
+08/24/2025 17:32:21 - INFO - train_evaluator -   dataset_name: mimic_cxr
+08/24/2025 17:32:21 - INFO - train_evaluator -   max_seq_length: 60
+08/24/2025 17:32:21 - INFO - train_evaluator -   threshold: 3
+08/24/2025 17:32:21 - INFO - train_evaluator -   num_workers: 4
+08/24/2025 17:32:21 - INFO - train_evaluator -   batch_size: 2
+08/24/2025 17:32:21 - INFO - train_evaluator -   visual_extractor: resnet101
+08/24/2025 17:32:21 - INFO - train_evaluator -   visual_extractor_pretrained: True
+08/24/2025 17:32:21 - INFO - train_evaluator -   d_model: 512
+08/24/2025 17:32:21 - INFO - train_evaluator -   d_ff: 512
+08/24/2025 17:32:21 - INFO - train_evaluator -   d_vf: 2048
+08/24/2025 17:32:21 - INFO - train_evaluator -   num_heads: 8
+08/24/2025 17:32:21 - INFO - train_evaluator -   num_layers: 3
+08/24/2025 17:32:21 - INFO - train_evaluator -   dropout: 0.1
+08/24/2025 17:32:21 - INFO - train_evaluator -   logit_layers: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   bos_idx: 0
+08/24/2025 17:32:21 - INFO - train_evaluator -   eos_idx: 0
+08/24/2025 17:32:21 - INFO - train_evaluator -   pad_idx: 0
+08/24/2025 17:32:21 - INFO - train_evaluator -   use_bn: 0
+08/24/2025 17:32:21 - INFO - train_evaluator -   drop_prob_lm: 0.5
+08/24/2025 17:32:21 - INFO - train_evaluator -   rm_num_slots: 3
+08/24/2025 17:32:21 - INFO - train_evaluator -   rm_num_heads: 8
+08/24/2025 17:32:21 - INFO - train_evaluator -   rm_d_model: 512
+08/24/2025 17:32:21 - INFO - train_evaluator -   sample_method: beam_search
+08/24/2025 17:32:21 - INFO - train_evaluator -   beam_size: 3
+08/24/2025 17:32:21 - INFO - train_evaluator -   temperature: 1.0
+08/24/2025 17:32:21 - INFO - train_evaluator -   sample_n: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   group_size: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   output_logsoftmax: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   decoding_constraint: 0
+08/24/2025 17:32:21 - INFO - train_evaluator -   block_trigrams: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   seed: 456789
+08/24/2025 17:32:21 - INFO - train_evaluator -   model_path: results/mimic_cxr_100k
+08/24/2025 17:32:21 - INFO - train_evaluator -   detailed_output: True
+08/24/2025 17:32:21 - INFO - train_evaluator -   output_dir: eval_train_results_mimic_cxr_100k
+08/24/2025 17:32:21 - INFO - train_evaluator -   sample_size: 1000
+08/24/2025 17:32:21 - INFO - train_evaluator -   optim: AdamW
+08/24/2025 17:32:21 - INFO - train_evaluator -   lr_ve: 5e-05
+08/24/2025 17:32:21 - INFO - train_evaluator -   lr_ed: 1e-05
+08/24/2025 17:32:21 - INFO - train_evaluator -   weight_decay: 5e-05
+08/24/2025 17:32:21 - INFO - train_evaluator -   amsgrad: True
+08/24/2025 17:32:21 - INFO - train_evaluator -   lr_scheduler: StepLR
+08/24/2025 17:32:21 - INFO - train_evaluator -   step_size: 50
+08/24/2025 17:32:21 - INFO - train_evaluator -   gamma: 0.1
+08/24/2025 17:32:21 - INFO - train_evaluator -   epochs: 100
+08/24/2025 17:32:21 - INFO - train_evaluator -   save_dir: results
+08/24/2025 17:32:21 - INFO - train_evaluator -   record_dir: records/
+08/24/2025 17:32:21 - INFO - train_evaluator -   monitor_mode: max
+08/24/2025 17:32:21 - INFO - train_evaluator -   monitor_metric: BLEU_4
+08/24/2025 17:32:21 - INFO - train_evaluator -   early_stop: 50
+08/24/2025 17:32:21 - INFO - train_evaluator -   save_period: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   log_period: 1000
+08/24/2025 17:32:21 - INFO - train_evaluator -   use_amp: True
+08/24/2025 17:32:21 - INFO - train_evaluator -   resume: None
+08/24/2025 17:32:21 - INFO - train_evaluator -   gradient_accumulation_steps: 1
+08/24/2025 17:32:21 - INFO - train_evaluator -   n_gpu: 1
+08/24/2025 17:32:32 - INFO - train_evaluator - Loading model from results/mimic_cxr_100k
+08/24/2025 17:32:32 - INFO - train_evaluator - Loading best model from results/mimic_cxr_100k/model_best
+08/24/2025 17:32:32 - INFO - accelerate.accelerator - Loading states from results/mimic_cxr_100k/model_best
+08/24/2025 17:32:32 - INFO - accelerate.checkpointing - All model weights loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.checkpointing - All optimizer states loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.checkpointing - All scheduler states loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.checkpointing - All dataloader sampler states loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.checkpointing - GradScaler state loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.checkpointing - All random states loaded successfully
+08/24/2025 17:32:35 - INFO - accelerate.accelerator - Loading in 0 custom states
+08/24/2025 17:32:35 - INFO - train_evaluator - Evaluating on training set...
+08/24/2025 17:32:36 - INFO - train_evaluator - Processed 2 samples so far...
+08/24/2025 17:32:40 - INFO - train_evaluator - Processed 42 samples so far...
+08/24/2025 17:32:44 - INFO - train_evaluator - Processed 82 samples so far...
+08/24/2025 17:32:48 - INFO - train_evaluator - Processed 122 samples so far...
+08/24/2025 17:32:51 - INFO - train_evaluator - Processed 162 samples so far...
+08/24/2025 17:32:55 - INFO - train_evaluator - Processed 202 samples so far...
+08/24/2025 17:32:59 - INFO - train_evaluator - Processed 242 samples so far...
+08/24/2025 17:33:03 - INFO - train_evaluator - Processed 282 samples so far...
+08/24/2025 17:33:07 - INFO - train_evaluator - Processed 322 samples so far...
+08/24/2025 17:33:11 - INFO - train_evaluator - Processed 362 samples so far...
+08/24/2025 17:33:15 - INFO - train_evaluator - Processed 402 samples so far...
+08/24/2025 17:33:19 - INFO - train_evaluator - Processed 442 samples so far...
+08/24/2025 17:33:22 - INFO - train_evaluator - Processed 482 samples so far...
+08/24/2025 17:33:26 - INFO - train_evaluator - Processed 522 samples so far...
+08/24/2025 17:33:30 - INFO - train_evaluator - Processed 562 samples so far...
+08/24/2025 17:33:34 - INFO - train_evaluator - Processed 602 samples so far...
+08/24/2025 17:33:38 - INFO - train_evaluator - Processed 642 samples so far...
+08/24/2025 17:33:42 - INFO - train_evaluator - Processed 682 samples so far...
+08/24/2025 17:33:46 - INFO - train_evaluator - Processed 722 samples so far...
+08/24/2025 17:33:49 - INFO - train_evaluator - Processed 762 samples so far...
+08/24/2025 17:33:53 - INFO - train_evaluator - Processed 802 samples so far...
+08/24/2025 17:33:57 - INFO - train_evaluator - Processed 842 samples so far...
+08/24/2025 17:34:01 - INFO - train_evaluator - Processed 882 samples so far...
+08/24/2025 17:34:05 - INFO - train_evaluator - Processed 922 samples so far...
+08/24/2025 17:34:09 - INFO - train_evaluator - Processed 962 samples so far...
+08/24/2025 17:34:13 - INFO - train_evaluator - Training set predictions and ground truths: 1000, 1000
+08/24/2025 17:34:13 - INFO - train_evaluator - Training samples (first 10):
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[0]: ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[0]: 'ap and lateral chest radiographs demonstrate bibasilar consolidation most likely representing atelectasis but underlying infectious process cannot be excluded . cardiomediastinal silhouette is not well seen due to this finding . there is no pneumothorax . mild pulmonary vascular congestion is seen and pleural effusions cannot be excluded .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[1]: ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[1]: 'the lungs are clear . the heart and mediastinal structures are unremarkable . the bony thorax is grossly intact .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[2]: ' . . . . . . . . ett . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[2]: 'no consolidation pleural effusion or pneumothorax . linear opacities the left lung most likely represent atelectasis . moderate enlargement of the cardiac silhouette is stable . there are aortic arch calcifications .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[3]: ' . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[3]: 'there is persistent moderate cardiomegaly . enlargement of the main pulmonary artery is again seen suggesting pulmonary hypertension . the lungs are clear without consolidation effusion or edema . no acute osseous abnormalities .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[4]: ' . . . . . . . . ett . ett postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[4]: 'the lung volumes are low . again there is vascular engorgement interstitial thickening and hazy perihilar opacities consistent with mild pulmonary edema . this is not significantly changed from the prior exam . there is no focal consolidation . there is no pleural effusion or pneumothorax . the mediastinal contours are normal . the heart size is moderately enlarged'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[5]: ' . . . . . . . . overall postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[5]: 'the cardiac mediastinal and hilar contours appear stable . there is no pleural effusion or pneumothorax . streaky scarring in the lingula is unchanged . the lungs appear otherwise clear .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[6]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[6]: 'increased density at the right base has progressed compared to the prior study of and is compatible right middle lobe pneumonia . there is stable severe cardiomegaly . there is no pleural effusion pneumothorax or pulmonary edema .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[7]: ' . . . . . . . . . postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical postsurgical'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[7]: 'increased density at the right base has progressed compared to the prior study of and is compatible right middle lobe pneumonia . there is stable severe cardiomegaly . there is no pleural effusion pneumothorax or pulmonary edema .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[8]: ' . . . . . . . . . ett . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[8]: 'streaky atelectasis is noted at the left lung base . lungs are otherwise clear of consolidation pleural effusion or pneumothorax . pulmonary vascular congestion is mild . mild cardiomegaly persists . aortic arch calcifications are incidental finding .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Pred[9]: ' . . . . . . . . . previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously previously'
+08/24/2025 17:34:13 - INFO - train_evaluator - GT[9]: 'when compared to prior there is no significant interval change . indistinct pulmonary vascular markings are again noted with central venous engorgement . moderate cardiomegaly is stable in configuration . there is no pleural effusion . hypertrophic changes noted in the spine . atherosclerotic calcifications seen at the aortic arch .'
+08/24/2025 17:34:13 - INFO - train_evaluator - Empty predictions: 0/1000
+08/24/2025 17:34:14 - INFO - train_evaluator - Training Set Results:
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_BLEU_1: 0.07305084745762588
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_BLEU_2: 0.0031742682557831126
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_BLEU_3: 5.6122559032177886e-09
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_BLEU_4: 7.495594645974475e-12
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_ROUGE_L: 0.0826317716023887
+08/24/2025 17:34:14 - INFO - train_evaluator -   train_CIDER: 8.111285509688243e-05

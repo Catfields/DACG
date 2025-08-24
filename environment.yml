@@ -1,0 +1,15 @@
+name: dacg  # 环境名称，可自定义
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9  # 推荐使用 Python 3.8/3.9/3.10
+  - cudatoolkit=11.7  # 匹配 cu117
+  - pytorch=2.0.1
+  - torchvision=0.15.2
+  - numpy<2
+  - pip
+  - pip:
+    - opencv-python==4.7.0.72
+    - git+https://github.com/salaniz/pycocoevalcap.git
