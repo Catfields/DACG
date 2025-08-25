@@ -23,44 +23,6 @@ class PositionalEncoding(nn.Module):
         return x + self.pe[:x.size(0), :]
 
 
-class MultiHeadAttention(nn.Module):
-    """多头注意力机制"""
-    def __init__(self, d_model, num_heads=8, dropout=0.1):
-        super(MultiHeadAttention, self).__init__()
-        assert d_model % num_heads == 0
-        
-        self.d_model = d_model
-        self.num_heads = num_heads
-        self.d_k = d_model // num_heads
-        
-        self.w_q = nn.Linear(d_model, d_model)
-        self.w_k = nn.Linear(d_model, d_model)
-        self.w_v = nn.Linear(d_model, d_model)
-        self.w_o = nn.Linear(d_model, d_model)
-        self.dropout = nn.Dropout(dropout)
-    
-    def forward(self, query, key, value, mask=None):
-        batch_size = query.size(0)
-        
-        # 线性变换并分头
-        Q = self.w_q(query).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
-        K = self.w_k(key).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
-        V = self.w_v(value).view(batch_size, -1, self.num_heads, self.d_k).transpose(1, 2)
-        
-        # 注意力计算
-        scores = torch.matmul(Q, K.transpose(-2, -1)) / math.sqrt(self.d_k)
-        if mask is not None:
-            scores = scores.masked_fill(mask == 0, -1e4)
-        attention_weights = F.softmax(scores, dim=-1)
-        attention_weights = self.dropout(attention_weights)
-        
-        context = torch.matmul(attention_weights, V)
-        context = context.transpose(1, 2).contiguous().view(
-            batch_size, -1, self.d_model)
-        
-        return self.w_o(context), attention_weights
-
-
 class FeedForward(nn.Module):
     """前馈网络"""
     def __init__(self, d_model, d_ff=2048, dropout=0.1):
@@ -78,7 +40,8 @@ class EncoderLayer(nn.Module):
     def __init__(self, d_model, num_heads=8, d_ff=2048, dropout=0.1):
         super(EncoderLayer, self).__init__()
         self.d_model = d_model
-        self.self_attention = MultiHeadAttention(d_model, num_heads, dropout)
+        # 使用PyTorch原生的MultiheadAttention
+        self.self_attention = nn.MultiheadAttention(embed_dim=d_model, num_heads=num_heads, dropout=dropout, batch_first=True)
         self.feed_forward = FeedForward(d_model, d_ff, dropout)
         self.norm1 = nn.LayerNorm(d_model)
         self.norm2 = nn.LayerNorm(d_model)
@@ -86,7 +49,37 @@ class EncoderLayer(nn.Module):
         
     def forward(self, x, mask=None):
         # 自注意力 + 残差连接 + 层归一化
-        attn_output, _ = self.self_attention(x, x, x, mask)
+        # PyTorch MultiheadAttention的mask参数是attn_mask，需要是(L, S)或(N*num_heads, L, S)
+        # 这里的mask是(B, 1, T, T)或(B, T, T)，需要调整
+        # 如果mask是布尔类型，需要转换为float类型，True表示masked
+        if mask is not None:
+            # 将(B, 1, T, T)或(B, T, T)转换为(T, T)并重复num_heads次，或者直接传递(T, T)
+            # 或者更简单地，如果mask是布尔类型，直接传递给attn_mask
+            # PyTorch 2.0+ 支持直接传递 (B, T, T) 形状的布尔掩码
+            # 对于旧版本，需要转换为(T, T)并扩展
+            if mask.dim() == 4: # (B, 1, T, T)
+                mask = mask.squeeze(1) # (B, T, T)
+            # attn_mask 期望 (L, S) 或 (N*num_heads, L, S)
+            # 如果是因果掩码，通常是 (T, T)
+            # PyTorch MultiheadAttention的attn_mask是加性掩码，True表示不关注
+            # 我们的mask是0表示masked，所以需要反转
+            attn_mask = (mask == 0) if mask.dtype == torch.bool else mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+            # 对于batch_first=True, attn_mask 应该是 (N, L, S) 或 (L, S)
+            # 如果是因果掩码，通常是 (L, S)
+            # 这里假设mask是因果掩码，且形状为 (T, T)
+            # 如果是batch_first=True，query, key, value 形状是 (N, L, E)
+            # attn_mask 形状是 (L, S) 或 (N*num_heads, L, S)
+            # 对于自注意力，L=S=seq_len
+            # 如果是布尔掩码，True表示忽略
+            # 我们的mask是0表示忽略，所以需要反转
+            if mask.dtype == torch.bool:
+                attn_mask = ~mask # True表示忽略
+            else: # float mask
+                attn_mask = mask.masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
+        else:
+            attn_mask = None
+        
+        attn_output, _ = self.self_attention(x, x, x, attn_mask=attn_mask)
         x = self.norm1(x + self.dropout(attn_output))
         
         # 前馈网络 + 残差连接 + 层归一化
@@ -149,9 +142,9 @@ class DecoderLayer(nn.Module):
         self.d_model = d_model
         
         # Masked Multi-Head Attention 作为独立模块
-        self.masked_mha = MultiHeadAttention(d_model, num_heads, dropout)
+        self.masked_mha = nn.MultiheadAttention(embed_dim=d_model, num_heads=num_heads, dropout=dropout, batch_first=True)
         # Multi-Head Attention (交叉注意力)
-        self.cross_mha = MultiHeadAttention(d_model, num_heads, dropout)
+        self.cross_mha = nn.MultiheadAttention(embed_dim=d_model, num_heads=num_heads, dropout=dropout, batch_first=True)
         # Feed Forward Network
         self.feed_forward = FeedForward(d_model, d_ff, dropout)
         # 上下文引导归一化层 - 按照架构图位置配置
@@ -170,7 +163,7 @@ class DecoderLayer(nn.Module):
             
         self.dropout = nn.Dropout(dropout)
         
-    def forward(self, tgt, memory, GM_t, tgt_mask=True, memory_mask=None, return_logits=False):
+    def forward(self, tgt, memory, GM_t, tgt_mask=True, memory_mask=None, key_padding_mask=None, memory_key_padding_mask=None, return_logits=False):
         """
         前向传播 - 每一层都包含完整的输出层
 
@@ -200,13 +193,32 @@ class DecoderLayer(nn.Module):
         assert memory.size(0) == batch_size, f"批次大小不匹配: {memory.size(0)} vs {batch_size}"
         
         # Masked Multi-Head Attention
-        masked_attn, _ = self.masked_mha(tgt, tgt, tgt, tgt_mask)
+        # PyTorch MultiheadAttention的attn_mask是加性掩码，True表示忽略
+        # 我们的tgt_mask是0表示masked，所以需要反转
+        if tgt_mask is not None:
+            if tgt_mask.dtype == torch.bool:
+                attn_mask_tgt = ~tgt_mask # True表示忽略
+            else: # float mask
+                attn_mask_tgt = tgt_mask.masked_fill(tgt_mask == 0, float('-inf')).masked_fill(tgt_mask == 1, float(0.0))
+        else:
+            attn_mask_tgt = None
+        
+        masked_attn, _ = self.masked_mha(tgt, tgt, tgt, attn_mask=attn_mask_tgt, key_padding_mask=key_padding_mask)
         tgt = tgt + self.dropout(masked_attn)
         # Multi-Head Attention 输入前的 CNL
         tgt_norm = self.cnl_1(GM_t, tgt)
         
         # Multi-Head Attention (交叉注意力)
-        cross_attn, _ = self.cross_mha(tgt_norm, memory, memory, memory_mask)
+        # 我们的memory_mask是0表示masked，所以需要反转
+        if memory_mask is not None:
+            if memory_mask.dtype == torch.bool:
+                attn_mask_mem = ~memory_mask # True表示忽略
+            else: # float mask
+                attn_mask_mem = memory_mask.masked_fill(memory_mask == 0, float('-inf')).masked_fill(memory_mask == 1, float(0.0))
+        else:
+            attn_mask_mem = None
+
+        cross_attn, _ = self.cross_mha(tgt_norm, memory, memory, attn_mask=attn_mask_mem, key_padding_mask=memory_key_padding_mask)
         tgt = tgt + self.dropout(cross_attn)
         tgt_norm = self.cnl_2(GM_t, tgt)
         # Feed Forward Network
@@ -246,6 +258,7 @@ class Decoder(nn.Module):
         # 存储特殊token的ID，用于采样
         self.bos_id = None
         self.eos_id = None
+        self.pad_id = None
         
         self.dropout = nn.Dropout(dropout)
         
@@ -264,12 +277,31 @@ class Decoder(nn.Module):
             由最后一层DecoderLayer产生的经过softmax归一化的概率分布
         """
         # 处理输入
+        tokens = None
         if tgt.dim() == 2:  # 如果是token索引
+            tokens = tgt  # (B, T)
             tgt = self.embedding(tgt)
         
         # 添加位置编码
         tgt = self.pos_encoding(tgt.transpose(0, 1)).transpose(0, 1)
         tgt = self.dropout(tgt)
+        
+        # 生成 key_padding_mask（B, T），True表示需要屏蔽
+        key_padding_mask_local = None
+        if tokens is not None and hasattr(self, "pad_id") and self.pad_id is not None:
+            key_padding_mask_local = (tokens == self.pad_id)
+        
+        # 生成因果掩码 attn_mask（T, T），True表示需要屏蔽
+        B, T, _ = tgt.shape
+        device = tgt.device
+        if tgt_mask is None:
+            attn_mask_local = torch.triu(torch.ones(T, T, device=device, dtype=torch.bool), diagonal=1)
+        else:
+            if tgt_mask.dtype == torch.bool:
+                # 若传入的是下三角True表示可见，需要取反为屏蔽位(True)
+                attn_mask_local = ~tgt_mask
+            else:
+                attn_mask_local = (tgt_mask == 0)
         
         # 通过所有解码器层（只有最后一层包含输出层）
         x = tgt
@@ -277,10 +309,10 @@ class Decoder(nn.Module):
         for i, layer in enumerate(self.layers):
             if i == len(self.layers) - 1:  # 最后一层
                 # 最后一层返回logits
-                output = layer(x, memory, GM_t, tgt_mask)
+                output = layer(x, memory, GM_t, tgt_mask=attn_mask_local, key_padding_mask=key_padding_mask_local)
             else:  # 中间层
                 # 中间层返回隐藏状态（嵌入维度）
-                output = layer(x, memory, GM_t, tgt_mask, return_logits=False)
+                output = layer(x, memory, GM_t, tgt_mask=attn_mask_local, key_padding_mask=key_padding_mask_local, return_logits=False)
             layer_outputs.append(output)
             # 对于中间层，保持嵌入维度；最后一层返回概率分布
             if i < len(self.layers) - 1:
@@ -306,7 +338,7 @@ class EncoderDecoder(nn.Module):
         max_seq_length = args.max_seq_length if hasattr(args, 'max_seq_length') else 100
         H = args.H if hasattr(args, 'H') else 49
         
-        # 改进B: 保存特殊token的ID，避免硬编码
+        # 保存特殊token的ID，避免硬编码
         self.bos_id = tokenizer.token2idx[tokenizer.BOS_TOKEN]
         self.eos_id = tokenizer.token2idx[tokenizer.EOS_TOKEN]
         self.pad_id = tokenizer.token2idx[tokenizer.PAD_TOKEN]
@@ -317,9 +349,10 @@ class EncoderDecoder(nn.Module):
                              d_ff, dropout, max_seq_length, H, 
                              context_dim=getattr(args, 'visual_feat_dim', 2048))
         
-        # 改进B: 将特殊token的ID也传递给decoder
+        #将特殊token的ID也传递给decoder
         self.decoder.bos_id = self.bos_id
         self.decoder.eos_id = self.eos_id
+        self.decoder.pad_id = self.pad_id
         
         # 初始化GM生成器
         self.gmg = GMG(hidden_dim=d_model, num_heads=8, dropout=dropout)
@@ -446,6 +479,23 @@ if __name__ == "__main__":
     class MockTokenizer:
         def __init__(self, vocab_size):
             self.vocab_size = vocab_size
+            # 模拟特殊token和它们的ID
+            self.BOS_TOKEN = "<bos>"
+            self.EOS_TOKEN = "<eos>"
+            self.PAD_TOKEN = "<pad>"
+            self.token2idx = {
+                self.BOS_TOKEN: 0,
+                self.EOS_TOKEN: 1,
+                self.PAD_TOKEN: 2,
+                # 假设其他token从3开始
+                "word1": 3,
+                "word2": 4,
+                # ...
+            }
+            # 确保vocab_size至少包含这些特殊token
+            if vocab_size < len(self.token2idx):
+                self.vocab_size = len(self.token2idx)
+        
         def get_vocab_size(self):
             return self.vocab_size
     
@@ -499,6 +549,7 @@ if __name__ == "__main__":
         
         # 验证输出
         expected_shape = (batch_size, 1, vocab_size)
+        expected_shape = (batch_size, seq_len, vocab_size) # 更新为期望的完整序列输出形状
         assert output.shape == expected_shape, f"输出形状错误: 期望{expected_shape}, 实际{output.shape}"
         
         # 测试推理模式
@@ -551,7 +602,9 @@ if __name__ == "__main__":
     
     print(f"   初始GM总和: {initial_gm_sum:.4f}")
     print(f"   训练模式输出形状: {test_output.shape}")
-    assert test_output.shape == (batch_size, 1, vocab_size), "训练模式输出形状错误"
+    # 更新为期望的完整序列输出形状
+    expected_test_output_shape = (batch_size, test_targets.size(1), vocab_size)
+    assert test_output.shape == expected_test_output_shape, "训练模式输出形状错误"
     
     # 测试推理模式下的GM更新
     print("\n2. 测试推理模式下的GM更新...")
@@ -616,7 +669,9 @@ if __name__ == "__main__":
         default_output = test_model(fc_feats, att_feats, test_targets, mode='forward')
     
     print(f"   默认初始化输出形状: {default_output.shape}")
-    assert default_output.shape == (batch_size, 1, vocab_size), "默认初始化失败"
+    # 更新为期望的完整序列输出形状
+    expected_default_output_shape = (batch_size, test_targets.size(1), vocab_size)
+    assert default_output.shape == expected_default_output_shape, "默认初始化失败"
     
     print("\n" + "="*50)
     print("所有GM集成测试通过！")

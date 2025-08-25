@@ -8,17 +8,16 @@ class GMG(nn.Module):
     实现基于多头注意力的引导记忆更新机制，用于序列到序列生成任务
     """
     
-    def __init__(self, hidden_dim=512, num_heads=8, mlp_ratio=4, dropout=0.1):
+    def __init__(self, hidden_dim=512, num_heads=8, mlp_ratio=4, dropout=0.1, alpha=0.02):
         super(GMG, self).__init__()
         self.hidden_dim = hidden_dim
         self.num_heads = num_heads
-        self.head_dim = hidden_dim // num_heads
-        assert hidden_dim % num_heads == 0, "hidden_dim must be divisible by num_heads"
-        
-        # 多头注意力参数
-        self.V_q = nn.Parameter(torch.randn(hidden_dim, hidden_dim) * 0.02)
-        self.V_k = nn.Parameter(torch.randn(hidden_dim * 2, hidden_dim) * 0.02)
-        self.V_v = nn.Parameter(torch.randn(hidden_dim * 2, hidden_dim) * 0.02)
+        self.alpha = alpha # EMA更新速率
+        # PyTorch原生多头注意力
+        self.multihead_attn = nn.MultiheadAttention(embed_dim=hidden_dim, num_heads=num_heads, dropout=dropout, batch_first=False)
+        # 用于将拼接后的K/V输入投影回hidden_dim
+        self.kv_proj_k = nn.Linear(hidden_dim * 2, hidden_dim)
+        self.kv_proj_v = nn.Linear(hidden_dim * 2, hidden_dim)
         
         # MLP参数
         self.mlp = nn.Sequential(
@@ -57,34 +56,31 @@ class GMG(nn.Module):
         # 扩展 y_prev 为 Y_{t-1}
         Y_prev = y_prev.repeat(H, 1)  # 形状: (H, D)
         
-        # 步骤1: 计算多头注意力的 Q/K/V
-        # 公式7: Q = GM_{t-1} @ V_q
-        Q = torch.matmul(GM_prev, self.V_q)  # (H, D)
+        # 步骤1: 准备多头注意力的 Q/K/V
+        # Q: GM_prev (H, D)
+        # K/V: 由 concat(GM_prev, Y_prev) 经过线性投影得到 (H, D)
         
-        # 公式8: K = concat(GM_{t-1}, Y_{t-1}) @ V_k
-        concat_input_k = torch.cat([GM_prev, Y_prev], dim=1)  # (H, 2D)
-        K = torch.matmul(concat_input_k, self.V_k)  # (H, D)
+        # 拼接 GM_prev 和 Y_prev 作为 K 和 V 的输入
+        concat_input_kv = torch.cat([GM_prev, Y_prev], dim=1) # (H, 2D)
         
-        # 公式9: V = concat(GM_{t-1}, Y_{t-1}) @ V_v
-        concat_input_v = torch.cat([GM_prev, Y_prev], dim=1)  # (H, 2D)
-        V = torch.matmul(concat_input_v, self.V_v)  # (H, D)
+        # 线性投影 K 和 V
+        K_mha = self.kv_proj_k(concat_input_kv) # (H, D)
+        V_mha = self.kv_proj_v(concat_input_kv) # (H, D)
         
-        # 多头注意力计算
-        # 重塑为多头形式
-        Q = Q.view(H, self.num_heads, self.head_dim).transpose(0, 1)  # (num_heads, H, head_dim)
-        K = K.view(H, self.num_heads, self.head_dim).transpose(0, 1)  # (num_heads, H, head_dim)
-        V = V.view(H, self.num_heads, self.head_dim).transpose(0, 1)  # (num_heads, H, head_dim)
+        # 调整形状以适应 nn.MultiheadAttention (L, N, E)
+        # L=H (sequence length), N=1 (batch size), E=D (embedding dim)
+        query = GM_prev.unsqueeze(1) # (H, 1, D)
+        key = K_mha.unsqueeze(1) # (H, 1, D)
+        value = V_mha.unsqueeze(1) # (H, 1, D)
         
-        # 计算注意力权重
-        attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / (self.head_dim ** 0.5)  # (num_heads, H, H)
-        attention_weights = F.softmax(attention_scores, dim=-1)
+        # 执行多头注意力
+        attn_output, attn_output_weights = self.multihead_attn(query, key, value)
         
-        # 应用注意力
-        O = torch.matmul(attention_weights, V)  # (num_heads, H, head_dim)
-        O = O.transpose(0, 1).contiguous().view(H, D)  # (H, D)
+        # 恢复输出形状 (H, D)
+        O = attn_output.squeeze(1) # (H, D)
         
-        # 计算平均注意力权重（用于返回）
-        avg_attention_weights = attention_weights.mean(dim=0)  # (H, H)
+        # 获取平均注意力权重 (H, H)
+        avg_attention_weights = attn_output_weights.squeeze(0) # (H, H)
         
         # 步骤2: 残差连接与MLP（公式10）
         # GM_t^* = MLP(O + GM_{t-1}) + O + GM_{t-1}
@@ -109,7 +105,11 @@ class GMG(nn.Module):
         gate_i_sigmoid = torch.sigmoid(gate_i)  # (H, D)
         tanh_GM_star = torch.tanh(GM_star)  # (H, D)
         
-        GM_current = gate_f_sigmoid * GM_prev + gate_i_sigmoid * tanh_GM_star  # (H, D)
+        # 原始的GM更新公式
+        GM_target = gate_f_sigmoid * GM_prev + gate_i_sigmoid * tanh_GM_star  # (H, D)
+        
+        # 应用EMA更新
+        GM_current = (1 - self.alpha) * GM_prev + self.alpha * GM_target # (H, D)
         
         return GM_current, avg_attention_weights
 
